@@ -1,0 +1,24 @@
+--Function: public.DO_STR_NULL(text, text)
+
+--DROP FUNCTION public."DO_STR_NULL"(text, text);
+
+CREATE OR REPLACE FUNCTION public."DO_STR_NULL"
+(
+  IN   text,
+  IN   text
+)
+RETURNS text AS
+$$
+SELECT CASE
+WHEN $1='' OR $1 IS NULL THEN $2
+ELSE $1
+END;
+$$
+LANGUAGE 'sql'
+VOLATILE
+CALLED ON NULL INPUT
+SECURITY INVOKER
+COST 100;
+
+ALTER FUNCTION public."DO_STR_NULL"(text, text)
+  OWNER TO postgres;

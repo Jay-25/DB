@@ -1,0 +1,23 @@
+--Function: public.IS_STR_NULL(text)
+
+--DROP FUNCTION public."IS_STR_NULL"(text);
+
+CREATE OR REPLACE FUNCTION public."IS_STR_NULL"
+(
+  IN   text
+)
+RETURNS boolean AS
+$$
+SELECT CASE
+WHEN $1='' THEN TRUE
+ELSE FALSE
+END;
+$$
+LANGUAGE 'sql'
+VOLATILE
+CALLED ON NULL INPUT
+SECURITY INVOKER
+COST 100;
+
+ALTER FUNCTION public."IS_STR_NULL"(text)
+  OWNER TO postgres;
