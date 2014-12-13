@@ -1,3 +1,20 @@
+DROP TABLE tab_school;
+
+CREATE TABLE tab_school
+(
+  id serial NOT NULL,
+  name text,
+  address text,
+  post text,
+  tel text,
+  province text,
+  coordinate point,
+  CONSTRAINT tab_school_province_name_key UNIQUE (province, name)
+)
+WITH (
+  OIDS=FALSE
+);
+
 
 CREATE SEQUENCE public.tab_address_id_seq
   START 783697
@@ -1811,3 +1828,22 @@ ALTER TYPE public.t_clip_map_bee_base
   OWNER TO postgres;  
   
   
+
+DROP TABLE tab_weather;
+CREATE TABLE tab_weather
+(
+  id bigserial NOT NULL,
+  date timestamp(6) without time zone NOT NULL,
+  city character varying(64) NOT NULL,
+  "tempH" character varying(16),
+  "tempL" character varying(16),
+  weather character varying(64),
+  "windDir" character varying(64),
+  "windPower" character varying(64),
+  url text NOT NULL
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE tab_weather
+  OWNER TO postgres;
