@@ -1,0 +1,13 @@
+ SELECT 'insert into tab_second_house_other(release_time,price,price_unit,house_property,house_style,
+house_struct,house_decoration,house_class,build_class,usage_area,build_area,build_name,build_time_year,build_face,build_layer,
+build_max_layer,address_city,address,develop_company,property_costs,property_company,mortgage_down_payment,monthly,url,
+url_cofrom,web_in_uid,postcode,coordinate,elevation,cofrom) select h.release_time,h.price,h.price_unit,h.house_property,h.house_style,
+h.house_struct,h.house_decoration,h.house_class,h.build_class,h.usage_area,h.build_area,
+h.build_name,h.build_time_year,h.build_face,h.build_layer,h.build_max_layer,h.address_city,
+''' || h.address || ''',h.develop_company,h.property_costs,h.property_company,
+h.mortgage_down_payment,h.monthly,h.url,h.url_cofrom,h.web_in_uid,h.postcode,h.coordinate,h.elevation,h.cofrom from tab_second_house h where
+h.id=' || h.id || ';' AS str1,
+    (('delete from tab_second_house where id='::text || h.id) || ';'::text) AS str2
+   FROM 
+    tab_second_house h
+  WHERE h.url_cofrom='am.58.com'

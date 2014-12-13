@@ -103,18 +103,22 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for tab_china_city
 -- ----------------------------
-DROP TABLE IF EXISTS "public"."tab_china_city";
-CREATE TABLE "public"."tab_china_city" (
-"id" int4,
-"state" varchar(64) COLLATE "default",
-"city" varchar(64) COLLATE "default",
-"sz_code" int4,
-"Rome" varchar(64) COLLATE "default",
-"zm_code" varchar(64) COLLATE "default"
+DROP TABLE tab_china_city;
+CREATE TABLE tab_china_city
+(
+  id integer,
+  state character varying(64) NOT NULL,
+  city character varying(64) NOT NULL,
+  sz_code integer,
+  city_py character varying(64),
+  zm_code character varying(64),
+  state_py character varying(64)
 )
-WITH (OIDS=FALSE)
-
-;
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE tab_china_city
+  OWNER TO postgres;
 
 -- ----------------------------
 -- Table structure for tab_gps_base

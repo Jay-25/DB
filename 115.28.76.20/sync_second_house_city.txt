@@ -1,0 +1,11 @@
+select distinct 'DELETE from tab_second_house_'||lower(state_py)||' h 
+where 
+ EXISTS(
+select 1 from
+(SELECT dblink.url_cofrom, dblink.web_in_uid
+FROM dblink (
+		''host=115.28.76.20 dbname=mydb user=postgres password=tutankhamun'',
+		''select url_cofrom,web_in_uid from tab_second_house_'||lower(state_py)||'''
+	) dblink ( "url_cofrom" VARCHAR, "web_in_uid" VARCHAR)) r
+where h.url_cofrom =r.url_cofrom and h.web_in_uid=r.web_in_uid);' from tab_china_city
+GROUP BY state_py

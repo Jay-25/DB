@@ -1,0 +1,215 @@
+SELECT 'CREATE MATERIALIZED VIEW "mvw_second_house_bee_2014_0.010_'||city||'" as
+SELECT 1 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-1-1'', ''2014-2-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 2 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-2-1'', ''2014-3-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 3 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-3-1'', ''2014-4-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 4 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-4-1'', ''2014-5-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 5 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-5-1'', ''2014-6-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 6 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-6-1'', ''2014-7-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 7 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-7-1'', ''2014-8-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 8 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-8-1'', ''2014-9-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 9 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-9-1'', ''2014-10-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 10 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-10-1'', ''2014-11-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 11 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-11-1'', ''2014-12-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 12 AS month,0.010 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.010, ''2014-12-1'', ''2015-1-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+;' as sql
+from (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'CREATE MATERIALIZED  VIEW "mvw_second_house_bee_2014_0.050_'||city||'" as
+SELECT 1 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-1-1'', ''2014-2-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 2 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-2-1'', ''2014-3-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 3 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-3-1'', ''2014-4-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 4 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-4-1'', ''2014-5-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 5 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-5-1'', ''2014-6-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 6 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-6-1'', ''2014-7-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 7 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-7-1'', ''2014-8-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 8 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-8-1'', ''2014-9-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 9 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-9-1'', ''2014-10-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 10 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-10-1'', ''2014-11-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 11 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-11-1'', ''2014-12-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 12 AS month,0.050 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.050, ''2014-12-1'', ''2015-1-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+;' as sql
+from (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'CREATE MATERIALIZED  VIEW "mvw_second_house_bee_2014_0.100_'||city||'" as
+SELECT 1 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-1-1'', ''2014-2-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 2 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-2-1'', ''2014-3-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 3 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-3-1'', ''2014-4-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 4 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-4-1'', ''2014-5-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 5 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-5-1'', ''2014-6-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 6 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-6-1'', ''2014-7-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 7 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-7-1'', ''2014-8-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 8 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-8-1'', ''2014-9-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 9 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-9-1'', ''2014-10-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 10 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-10-1'', ''2014-11-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 11 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-11-1'', ''2014-12-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 12 AS month,0.100 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.100, ''2014-12-1'', ''2015-1-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+;' as sql
+from (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'CREATE MATERIALIZED  VIEW "mvw_second_house_bee_2014_0.500_'||city||'" as
+SELECT 1 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-1-1'', ''2014-2-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 2 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-2-1'', ''2014-3-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 3 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-3-1'', ''2014-4-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 4 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-4-1'', ''2014-5-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 5 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-5-1'', ''2014-6-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 6 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-6-1'', ''2014-7-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 7 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-7-1'', ''2014-8-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 8 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-8-1'', ''2014-9-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 9 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-9-1'', ''2014-10-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 10 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-10-1'', ''2014-11-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 11 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-11-1'', ''2014-12-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 12 AS month,0.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 0.500, ''2014-12-1'', ''2015-1-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+;' as sql
+from (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'CREATE MATERIALIZED  VIEW "mvw_second_house_bee_2014_1.000_'||city||'" as
+SELECT 1 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-1-1'', ''2014-2-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 2 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-2-1'', ''2014-3-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 3 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-3-1'', ''2014-4-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 4 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-4-1'', ''2014-5-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 5 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-5-1'', ''2014-6-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 6 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-6-1'', ''2014-7-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 7 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-7-1'', ''2014-8-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 8 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-8-1'', ''2014-9-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 9 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-9-1'', ''2014-10-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 10 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-10-1'', ''2014-11-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 11 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-11-1'', ''2014-12-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 12 AS month,1.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.000, ''2014-12-1'', ''2015-1-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+;' as sql
+from (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'CREATE MATERIALIZED  VIEW "mvw_second_house_bee_2014_1.500_'||city||'" as
+SELECT 1 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-1-1'', ''2014-2-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 2 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-2-1'', ''2014-3-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 3 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-3-1'', ''2014-4-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 4 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-4-1'', ''2014-5-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 5 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-5-1'', ''2014-6-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 6 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-6-1'', ''2014-7-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 7 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-7-1'', ''2014-8-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 8 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-8-1'', ''2014-9-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 9 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-9-1'', ''2014-10-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 10 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-10-1'', ''2014-11-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 11 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-11-1'', ''2014-12-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 12 AS month,1.500 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 1.500, ''2014-12-1'', ''2015-1-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+;' as sql
+from (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'CREATE MATERIALIZED  VIEW "mvw_second_house_bee_2014_2.000_'||city||'" as
+SELECT 1 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-1-1'', ''2014-2-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 2 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-2-1'', ''2014-3-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 3 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-3-1'', ''2014-4-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 4 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-4-1'', ''2014-5-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 5 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-5-1'', ''2014-6-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 6 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-6-1'', ''2014-7-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 7 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-7-1'', ''2014-8-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 8 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-8-1'', ''2014-9-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 9 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-9-1'', ''2014-10-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 10 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-10-1'', ''2014-11-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 11 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-11-1'', ''2014-12-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 12 AS month,2.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 2.000, ''2014-12-1'', ''2015-1-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+;' as sql
+from (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'CREATE MATERIALIZED  VIEW "mvw_second_house_bee_2014_4.000_'||city||'" as
+SELECT 1 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-1-1'', ''2014-2-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 2 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-2-1'', ''2014-3-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 3 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-3-1'', ''2014-4-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 4 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-4-1'', ''2014-5-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 5 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-5-1'', ''2014-6-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 6 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-6-1'', ''2014-7-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 7 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-7-1'', ''2014-8-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 8 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-8-1'', ''2014-9-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 9 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-9-1'', ''2014-10-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 10 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-10-1'', ''2014-11-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 11 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-11-1'', ''2014-12-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+UNION ALL
+SELECT 12 AS month,4.000 AS area, price_unit, cnt, gid, center, P FROM fun_clip_map_gridset(''bee'', '''||city||''', 4.000, ''2014-12-1'', ''2015-1-1'', POINT(0,0), POINT(0,0)) fun_clip_map_gridset (price_unit NUMERIC, cnt NUMERIC, gid NUMERIC, center POINT, P point[])
+;' as sql
+from (SELECT DISTINCT lower(state_py) city from tab_china_city) t

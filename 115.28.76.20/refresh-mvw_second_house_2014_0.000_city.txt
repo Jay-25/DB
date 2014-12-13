@@ -1,0 +1,23 @@
+SELECT 'REFRESH MATERIALIZED VIEW "mvw_second_house_bee_2014_0.010_'||city||'";' as sql
+FROM (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'REFRESH MATERIALIZED VIEW "mvw_second_house_bee_2014_0.050_'||city||'";' as sql
+FROM (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'REFRESH MATERIALIZED VIEW "mvw_second_house_bee_2014_0.100_'||city||'";' as sql
+FROM (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'REFRESH MATERIALIZED VIEW "mvw_second_house_bee_2014_0.500_'||city||'";' as sql
+FROM (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'REFRESH MATERIALIZED VIEW "mvw_second_house_bee_2014_1.000_'||city||'";' as sql
+FROM (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'REFRESH MATERIALIZED VIEW "mvw_second_house_bee_2014_1.500_'||city||'";' as sql
+FROM (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'REFRESH MATERIALIZED VIEW "mvw_second_house_bee_2014_2.000_'||city||'";' as sql
+FROM (SELECT DISTINCT lower(state_py) city from tab_china_city) t
+UNION ALL
+SELECT 'REFRESH MATERIALIZED VIEW "mvw_second_house_bee_2014_4.000_'||city||'";' as sql
+FROM (SELECT DISTINCT lower(state_py) city from tab_china_city) t
